@@ -1,0 +1,39 @@
+{{ define "formCreate" }}
+  {{ template "header" }}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-4"></div>
+            <div class="col-6"><h1>Create a new product</h1></div>
+        </div>
+    </div> 
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm"></div>          
+            
+            <div class="col-sm-4">
+            <form action="/createNew" method="POST">
+                <div class="mb-3">
+                    <label class="form-label">Name</label>
+                    <input type="text" name="name" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Url image</label>
+                    <input type="text" name="image" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Description</label>
+                    <textarea class="form-control" name="description" rows="2"></textarea>
+                </div>
+                <br>
+                <button class="btn btn-success" type="submit" style="width: 150px;">Save</button>
+            </form>
+            </div>
+            <div class="col-sm"></div>
+        </div>
+    </div>
+        
+  {{ template "footer" }}
+
+{{ end }}

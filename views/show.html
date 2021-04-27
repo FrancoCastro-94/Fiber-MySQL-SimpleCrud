@@ -1,0 +1,36 @@
+{{ define "show" }}
+  {{ template "header" }}
+ 
+  <div class="container">
+    <div class="row">
+      
+    {{ with .Product }}
+
+      <div class="col-sm-4">
+        <div class="card" style="margin-top: 5px; background-color: rgba(128, 128, 128, 0.459); width: 14rem;">
+          <img src="{{ .Image }}" class="card-img-top" alt="gatito" style="height: 10rem;">
+          <div class="card-body">
+            <h5 class="card-title">{{ .Name }}</h5>
+            <p class="card-text">{{ .Description }}</p>
+            <a href="/updateForm/{{ .ID}}" class="btn btn-primary">Edit</a>
+            <a href="/delete/{{ .ID}}" class="btn btn-danger">Delete</a>
+          </div>
+        </div>
+      </div>
+
+    {{ end }}
+
+
+      <div class="col-sm-4">
+        
+      </div>
+
+      <div class="col-sm-4">
+       
+      </div>
+    </div>
+  </div>
+
+  {{ template "footer" }}
+
+{{ end }}
